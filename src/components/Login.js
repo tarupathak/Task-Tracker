@@ -26,7 +26,7 @@ const Login = ({ setUsername }) => {
         </div>
         <h2>Welcome Back</h2>
         <h2>To</h2>
-        <h2>Task Tracker</h2>
+        <h2>Personal Task Tracker</h2>
         <form onSubmit={handleLogin} className="login-form-dark">
           <div className="input-wrapper">
             <span className="icon">📧</span>

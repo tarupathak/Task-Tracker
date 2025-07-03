@@ -21,7 +21,7 @@ const App = () => {
       <nav className="navbar">
         <div className="navbar-left">
           <img src={logo} alt="Logo" className="logo" />
-          <span className="title">Task Tracker</span>
+          <span className="title">Personal Task Tracker</span>
         </div>
         {username && (
           <button className="logout-button" onClick={handleLogout}>
