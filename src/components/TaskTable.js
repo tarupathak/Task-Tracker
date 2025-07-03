@@ -5,6 +5,7 @@ import {
   GridRowModesModel,
   GridRowModes,
 } from "@mui/x-data-grid";
+
 import { Box } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -38,8 +39,12 @@ const TaskTable = ({ tasks, updateTask, deleteTask }) => {
   };
 
   const handleDeleteClick = (id) => () => {
+  const confirmDelete = window.confirm("Are you sure you want to delete this task?");
+  if (confirmDelete) {
     deleteTask(id);
-  };
+  }
+};
+
 
   const isValidDate = (dateStr) => {
     const date = new Date(dateStr);
