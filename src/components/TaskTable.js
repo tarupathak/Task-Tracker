@@ -200,7 +200,7 @@ const TaskTable = ({ tasks, updateTask, deleteTask }) => {
         }}
         experimentalFeatures={{ newEditingApi: true }}
       />
-      <ToastContainer position="bottom-right" autoClose={3000} />
+      <ToastContainer position="top-right" autoClose={3000} />
     </Box>
   );
 };
