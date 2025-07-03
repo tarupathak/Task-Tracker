@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { saveUser } from "../utils/localStorage";
 import "../styles/Login.css";
+import logo from '../assets/logo.png'
 
 const Login = ({ setUsername }) => {
   const [input, setInput] = useState("");
@@ -16,8 +17,10 @@ const Login = ({ setUsername }) => {
   return (
     <div className="login-page">
       <div className="login-card-dark">
-        <div className="login-logo">⚡</div>
+        <div className="login-logo"><img src={logo} alt="logo" height={40}/></div>
         <h2>Welcome Back</h2>
+        <h2>To</h2>
+        <h2>Task Tracker</h2>
         <form onSubmit={handleLogin} className="login-form-dark">
           <div className="input-wrapper">
             <span className="icon">📧</span>
