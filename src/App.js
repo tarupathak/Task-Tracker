@@ -1,11 +1,38 @@
 import React, { useState } from "react";
-import "./App.css";
 import Login from "./components/Login";
-import { getUser } from "./utils/localStorage";
+import TaskList from "./components/TaskList";
+import { getUser, removeUser } from "./utils/localStorage";
+import "./App.css";
+import logo from "./assets/logo.png";
 
-function App() {
+const App = () => {
   const [username, setUsername] = useState(getUser());
-  return <Login setUsername={setUsername} />;
-}
+
+  const handleLogout = () => {
+    removeUser();
+    setUsername("");
+  };
+
+  return (
+    <>
+      <nav className="navbar">
+        <div className="navbar-left">
+          <img src={logo} alt="Logo" className="logo" />
+          <span className="title">Task Tracker</span>
+        </div>
+        {username && (
+          <button className="logout-button" onClick={handleLogout}>
+            Logout
+          </button>
+        )}
+      </nav>
+      {username ? (
+        <TaskList username={username} />
+      ) : (
+        <Login setUsername={setUsername} />
+      )}
+    </>
+  );
+};
 
 export default App;

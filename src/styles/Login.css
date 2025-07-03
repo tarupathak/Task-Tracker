@@ -10,18 +10,18 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #0f0f0f;
+  background-color: #ffffff;
   padding: 20px;
 }
 
 .login-card-dark {
-  background-color: #1a1a1a;
-  color: white;
+  background-color: #ffffff;
+  color: #000000;
   padding: 40px;
   border-radius: 16px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -32,17 +32,16 @@
 
 .subtext {
   font-size: 0.85rem;
-  color: #aaa;
+  color: #555;
   margin-bottom: 30px;
 }
 
 .link {
-  color: white;
+  color: #007bff;
   font-weight: 500;
   cursor: pointer;
 }
 
-/* Form */
 .login-form-dark {
   display: flex;
   flex-direction: column;
@@ -52,10 +51,10 @@
 .input-wrapper {
   display: flex;
   align-items: center;
-  background-color: #111;
+  background-color: #f2f2f2;
   padding: 12px;
   border-radius: 10px;
-  border: 1px solid #333;
+  border: 1px solid #ccc;
   margin-top: 30px;
 }
 
@@ -63,14 +62,14 @@
   flex: 1;
   background: transparent;
   border: none;
-  color: white;
+  color: #000000;
   font-size: 1rem;
   padding-left: 10px;
   outline: none;
 }
 
 .input-wrapper .icon {
-  color: #888;
+  color: #777;
   font-size: 1.1rem;
 }
 
@@ -92,6 +91,6 @@
 
 .divider {
   margin: 20px 0;
-  color: #444;
+  color: #999;
   font-size: 0.8rem;
 }

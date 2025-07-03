@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { saveUser } from '../utils/localStorage';
-import '../styles/Login.css';
+import React, { useState } from "react";
+import { saveUser } from "../utils/localStorage";
+import "../styles/Login.css";
 
 const Login = ({ setUsername }) => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -29,12 +29,11 @@ const Login = ({ setUsername }) => {
               required
             />
           </div>
-         
+
           <button type="submit" className="primary-button">
             Login
           </button>
         </form>
-        
       </div>
     </div>
   );
