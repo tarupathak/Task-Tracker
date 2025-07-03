@@ -12,6 +12,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
 import CancelIcon from "@mui/icons-material/Close";
 
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const priorities = ["Low", "Medium", "High"];
 
 const TaskTable = ({ tasks, updateTask, deleteTask }) => {
@@ -39,12 +42,12 @@ const TaskTable = ({ tasks, updateTask, deleteTask }) => {
   };
 
   const handleDeleteClick = (id) => () => {
-  const confirmDelete = window.confirm("Are you sure you want to delete this task?");
-  if (confirmDelete) {
-    deleteTask(id);
-  }
-};
-
+    const confirmDelete = window.confirm("Are you sure you want to delete this task?");
+    if (confirmDelete) {
+      deleteTask(id);
+      toast.success("Task deleted successfully!");
+    }
+  };
 
   const isValidDate = (dateStr) => {
     const date = new Date(dateStr);
@@ -77,11 +80,12 @@ const TaskTable = ({ tasks, updateTask, deleteTask }) => {
     }
 
     if (Object.keys(errors).length > 0) {
-      alert(Object.values(errors).join("\n")); 
+      Object.values(errors).forEach((msg) => toast.error(msg));
       return oldRow;
     }
 
     updateTask(newRow);
+    toast.success("Task updated successfully!");
     return newRow;
   };
 
@@ -196,6 +200,7 @@ const TaskTable = ({ tasks, updateTask, deleteTask }) => {
         }}
         experimentalFeatures={{ newEditingApi: true }}
       />
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </Box>
   );
 };

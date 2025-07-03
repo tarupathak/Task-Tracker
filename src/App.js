@@ -4,6 +4,8 @@ import TaskList from "./components/TaskList";
 import { getUser, removeUser } from "./utils/localStorage";
 import "./App.css";
 import logo from "./assets/logo.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const [username, setUsername] = useState(getUser());
@@ -11,6 +13,7 @@ const App = () => {
   const handleLogout = () => {
     removeUser();
     setUsername("");
+    toast.success("Logged out successfully!");
   };
 
   return (
@@ -26,11 +29,15 @@ const App = () => {
           </button>
         )}
       </nav>
+      
       {username ? (
         <TaskList username={username} />
       ) : (
         <Login setUsername={setUsername} />
       )}
+
+      {/* Toast container at the bottom-right corner */}
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </>
   );
 };

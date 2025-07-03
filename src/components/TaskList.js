@@ -4,6 +4,9 @@ import TaskTable from "./TaskTable";
 import { getTasks, saveTasks } from "../utils/localStorage";
 import "../styles/TaskList.css";
 
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const TaskList = ({ username }) => {
   const [tasks, setTasks] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -23,6 +26,7 @@ const TaskList = ({ username }) => {
 
   const addTask = (task) => {
     setTasks((prev) => [...prev, task]);
+    toast.success("Task created successfully!");
     setOpenModal(false);
   };
 
@@ -31,8 +35,10 @@ const TaskList = ({ username }) => {
       prev.map((t) => (t.id === updatedTask.id ? updatedTask : t))
     );
 
-  const deleteTask = (id) =>
+  const deleteTask = (id) => {
     setTasks((prev) => prev.filter((t) => t.id !== id));
+    toast.success("Task deleted successfully!");
+  };
 
   const filtered = tasks.filter((t) =>
     filter === "All"
@@ -86,6 +92,8 @@ const TaskList = ({ username }) => {
           </div>
         </div>
       )}
+
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </div>
   );
 };
