@@ -18,9 +18,6 @@ const Login = ({ setUsername }) => {
       <div className="login-card-dark">
         <div className="login-logo">⚡</div>
         <h2>Welcome Back</h2>
-        {/* <p className="subtext">
-          Don't have an account yet? <span className="link">Sign up</span>
-        </p> */}
         <form onSubmit={handleLogin} className="login-form-dark">
           <div className="input-wrapper">
             <span className="icon">📧</span>
